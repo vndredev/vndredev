@@ -22,10 +22,13 @@ Fullstack Developer | AI-Powered Solutions
 ## 🚀 Featured Projects
 
 **[AI-System](https://github.com/vndredev/ai-system)** - AI-powered development workflow system
+
 **[FoodBlockz](https://github.com/vndredev/foodblockz)** - Fullstack food management app
 
 ## 🎯 Currently
+
 Building AI-powered fullstack applications with Claude Code
 
 ## 📫 Connect
+
 [🌐 vndre.dev](https://vndre.dev) | [📧 contact@vndre.dev](mailto:contact@vndre.dev)
