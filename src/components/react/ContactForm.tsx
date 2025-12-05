@@ -44,16 +44,16 @@ export default function ContactForm() {
       >
         <div className="text-5xl mb-4">✓</div>
         <h3 className="text-2xl font-semibold text-[var(--text-primary)] mb-2">
-          Nachricht gesendet!
+          Message Sent!
         </h3>
         <p className="text-[var(--text-secondary)]">
-          Danke für deine Nachricht. Ich melde mich bald bei dir.
+          Thanks for reaching out. I'll get back to you soon.
         </p>
         <button
           onClick={() => setStatus('idle')}
           className="mt-6 px-6 py-2 rounded-full glass-button text-[var(--text-primary)] hover:bg-[var(--color-accent)] hover:text-white transition-all"
         >
-          Neue Nachricht
+          Send Another
         </button>
       </motion.div>
     );
@@ -74,7 +74,7 @@ export default function ContactForm() {
             onChange={handleChange}
             required
             className="w-full px-4 py-3 rounded-xl glass-card text-[var(--text-primary)] placeholder-[var(--text-secondary)] focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)] transition-all"
-            placeholder="Dein Name"
+            placeholder="Your name"
           />
         </div>
         <div>
@@ -89,13 +89,13 @@ export default function ContactForm() {
             onChange={handleChange}
             required
             className="w-full px-4 py-3 rounded-xl glass-card text-[var(--text-primary)] placeholder-[var(--text-secondary)] focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)] transition-all"
-            placeholder="deine@email.de"
+            placeholder="your@email.com"
           />
         </div>
       </div>
       <div className="mt-6">
         <label htmlFor="message" className="block text-sm font-medium text-[var(--text-secondary)] mb-2">
-          Nachricht
+          Message
         </label>
         <textarea
           id="message"
@@ -105,7 +105,7 @@ export default function ContactForm() {
           onChange={handleChange}
           required
           className="w-full px-4 py-3 rounded-xl glass-card text-[var(--text-primary)] placeholder-[var(--text-secondary)] focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)] transition-all resize-none"
-          placeholder="Deine Nachricht..."
+          placeholder="Your message..."
         />
       </div>
       <div className="mt-8 text-center">
@@ -120,15 +120,15 @@ export default function ContactForm() {
                 <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
                 <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
               </svg>
-              Senden...
+              Sending...
             </span>
           ) : (
-            'Nachricht senden'
+            'Send Message'
           )}
         </button>
         {status === 'error' && (
           <p className="mt-4 text-red-500">
-            Etwas ist schiefgelaufen. Bitte versuche es erneut.
+            Something went wrong. Please try again.
           </p>
         )}
       </div>

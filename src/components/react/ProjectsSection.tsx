@@ -29,7 +29,7 @@ export default function ProjectsSection() {
   if (error) {
     return (
       <div className="text-center text-[var(--text-secondary)]">
-        Projekte konnten nicht geladen werden.
+        Failed to load projects.
       </div>
     );
   }
@@ -37,7 +37,7 @@ export default function ProjectsSection() {
   if (projects.length === 0) {
     return (
       <div className="text-center text-[var(--text-secondary)]">
-        Keine Projekte vorhanden.
+        No projects available.
       </div>
     );
   }
