@@ -3,7 +3,26 @@ import { motion } from 'motion/react';
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 import { db } from '@/lib/firebase';
 
-export default function ContactForm() {
+interface ContactTranslations {
+  name: string;
+  email: string;
+  message: string;
+  send: string;
+  sending: string;
+  success: string;
+  successText: string;
+  another: string;
+  error: string;
+  placeholderName: string;
+  placeholderEmail: string;
+  placeholderMessage: string;
+}
+
+interface Props {
+  translations: ContactTranslations;
+}
+
+export default function ContactForm({ translations: t }: Props) {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -44,16 +63,16 @@ export default function ContactForm() {
       >
         <div className="text-5xl mb-4">✓</div>
         <h3 className="text-2xl font-semibold text-[var(--text-primary)] mb-2">
-          Message Sent!
+          {t.success}
         </h3>
         <p className="text-[var(--text-secondary)]">
-          Thanks for reaching out. I'll get back to you soon.
+          {t.successText}
         </p>
         <button
           onClick={() => setStatus('idle')}
           className="mt-6 px-6 py-2 rounded-full glass-button text-[var(--text-primary)] hover:bg-[var(--color-accent)] hover:text-white transition-all"
         >
-          Send Another
+          {t.another}
         </button>
       </motion.div>
     );
@@ -64,7 +83,7 @@ export default function ContactForm() {
       <div className="grid gap-6 sm:grid-cols-2">
         <div>
           <label htmlFor="name" className="block text-sm font-medium text-[var(--text-secondary)] mb-2">
-            Name
+            {t.name}
           </label>
           <input
             type="text"
@@ -74,12 +93,12 @@ export default function ContactForm() {
             onChange={handleChange}
             required
             className="w-full px-4 py-3 rounded-xl glass-card text-[var(--text-primary)] placeholder-[var(--text-secondary)] focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)] transition-all"
-            placeholder="Your name"
+            placeholder={t.placeholderName}
           />
         </div>
         <div>
           <label htmlFor="email" className="block text-sm font-medium text-[var(--text-secondary)] mb-2">
-            Email
+            {t.email}
           </label>
           <input
             type="email"
@@ -89,13 +108,13 @@ export default function ContactForm() {
             onChange={handleChange}
             required
             className="w-full px-4 py-3 rounded-xl glass-card text-[var(--text-primary)] placeholder-[var(--text-secondary)] focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)] transition-all"
-            placeholder="your@email.com"
+            placeholder={t.placeholderEmail}
           />
         </div>
       </div>
       <div className="mt-6">
         <label htmlFor="message" className="block text-sm font-medium text-[var(--text-secondary)] mb-2">
-          Message
+          {t.message}
         </label>
         <textarea
           id="message"
@@ -105,7 +124,7 @@ export default function ContactForm() {
           onChange={handleChange}
           required
           className="w-full px-4 py-3 rounded-xl glass-card text-[var(--text-primary)] placeholder-[var(--text-secondary)] focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)] transition-all resize-none"
-          placeholder="Your message..."
+          placeholder={t.placeholderMessage}
         />
       </div>
       <div className="mt-8 text-center">
@@ -120,15 +139,15 @@ export default function ContactForm() {
                 <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
                 <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
               </svg>
-              Sending...
+              {t.sending}
             </span>
           ) : (
-            'Send Message'
+            t.send
           )}
         </button>
         {status === 'error' && (
           <p className="mt-4 text-red-500">
-            Something went wrong. Please try again.
+            {t.error}
           </p>
         )}
       </div>

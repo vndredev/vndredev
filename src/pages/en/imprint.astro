@@ -1,0 +1,79 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Section from '@/components/astro/Section.astro';
+import Footer from '@/components/astro/Footer.astro';
+import AnimatedSection from '@/components/react/AnimatedSection';
+
+const lang = 'en';
+---
+
+<BaseLayout
+  title="Imprint | Andre Schmidt"
+  description="Legal information for vndre.dev"
+  lang={lang}
+>
+  <Section class="min-h-screen pt-20">
+    <AnimatedSection client:visible>
+      <div class="max-w-3xl mx-auto">
+        <h1 class="text-4xl sm:text-5xl font-bold tracking-tight mb-12" style="letter-spacing: -0.02em;">
+          Imprint
+        </h1>
+
+        <div class="prose prose-lg dark:prose-invert max-w-none space-y-8 text-[var(--text-secondary)]">
+          <section>
+            <h2 class="text-2xl font-semibold text-[var(--text-primary)] mb-4">Information according to § 5 TMG (German law)</h2>
+            <p>
+              Andre Schmidt<br />
+              Hinter der Kirche 10<br />
+              31036 Eime-Deinsen<br />
+              Germany
+            </p>
+          </section>
+
+          <section>
+            <h2 class="text-2xl font-semibold text-[var(--text-primary)] mb-4">Contact</h2>
+            <p>
+              Email: <a href="mailto:hello@vndre.dev" class="text-[var(--color-accent)] hover:underline">hello@vndre.dev</a>
+            </p>
+          </section>
+
+          <section>
+            <h2 class="text-2xl font-semibold text-[var(--text-primary)] mb-4">Responsible for content</h2>
+            <p>
+              Andre Schmidt<br />
+              Hinter der Kirche 10<br />
+              31036 Eime-Deinsen
+            </p>
+          </section>
+
+          <section>
+            <h2 class="text-2xl font-semibold text-[var(--text-primary)] mb-4">Disclaimer</h2>
+
+            <h3 class="text-xl font-medium text-[var(--text-primary)] mt-6 mb-3">Liability for Content</h3>
+            <p>
+              The contents of these pages were created with the utmost care. However, no guarantee can be given for the correctness, completeness, and topicality of the content. As a service provider, I am responsible for my own content on these pages according to general laws.
+            </p>
+
+            <h3 class="text-xl font-medium text-[var(--text-primary)] mt-6 mb-3">Liability for Links</h3>
+            <p>
+              This website contains links to external third-party websites over whose content I have no influence. Therefore, I cannot assume any liability for this external content. The respective provider or operator of the linked pages is always responsible for their content.
+            </p>
+          </section>
+
+          <section>
+            <h2 class="text-2xl font-semibold text-[var(--text-primary)] mb-4">Copyright</h2>
+            <p>
+              The content and works created by the site operator on these pages are subject to German copyright law. Duplication, processing, distribution, and any kind of exploitation outside the limits of copyright law require the written consent of the respective author or creator.
+            </p>
+          </section>
+        </div>
+
+        <div class="mt-12">
+          <a href="/en/" class="text-[var(--color-accent)] hover:underline">← Back to Home</a>
+        </div>
+      </div>
+    </AnimatedSection>
+  </Section>
+
+  <Footer lang={lang} />
+</BaseLayout>

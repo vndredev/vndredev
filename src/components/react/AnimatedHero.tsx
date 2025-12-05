@@ -40,7 +40,7 @@ export default function AnimatedHero({ name, title, description, logoSrc }: Prop
     >
       <motion.h1
         variants={itemVariants}
-        className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-bold tracking-tighter flex items-center justify-center"
+        className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold tracking-tighter flex items-center justify-center flex-wrap"
         style={{ letterSpacing: '-0.03em' }}
       >
         {'VNDRE'.split('').map((letter, i) => (
@@ -55,7 +55,7 @@ export default function AnimatedHero({ name, title, description, logoSrc }: Prop
         ))}
         {logoSrc ? (
           <motion.div
-            className="inline-flex items-center justify-center mx-1 sm:mx-2 p-1.5 sm:p-2 rounded-full glass-logo-inline cursor-pointer"
+            className="inline-flex items-center justify-center mx-0.5 sm:mx-1 md:mx-2 p-1 sm:p-1.5 md:p-2 rounded-full glass-logo-inline cursor-pointer flex-shrink-0"
             initial={{ opacity: 0, scale: 0, rotate: -360 }}
             animate={{
               opacity: 1,
@@ -78,7 +78,7 @@ export default function AnimatedHero({ name, title, description, logoSrc }: Prop
             <motion.img
               src={logoSrc}
               alt={`${name} Logo`}
-              className="w-10 h-10 sm:w-14 sm:h-14 md:w-16 md:h-16 lg:w-20 lg:h-20 rounded-full object-cover"
+              className="w-8 h-8 sm:w-10 sm:h-10 md:w-14 md:h-14 lg:w-16 lg:h-16 xl:w-20 xl:h-20 rounded-full object-cover"
               whileHover={{ scale: 1.1, rotate: 5 }}
               transition={{ type: "spring", stiffness: 400, damping: 15 }}
             />
@@ -107,7 +107,7 @@ export default function AnimatedHero({ name, title, description, logoSrc }: Prop
 
       <motion.p
         variants={itemVariants}
-        className="mt-4 text-xl sm:text-2xl text-[var(--text-secondary)] font-normal"
+        className="mt-3 sm:mt-4 text-lg sm:text-xl md:text-2xl text-[var(--text-secondary)] font-normal"
         style={{ letterSpacing: '0.05em' }}
       >
         {name}
@@ -115,7 +115,7 @@ export default function AnimatedHero({ name, title, description, logoSrc }: Prop
 
       <motion.p
         variants={itemVariants}
-        className="mt-6 text-2xl sm:text-3xl text-[var(--text-primary)] font-medium"
+        className="mt-4 sm:mt-6 text-xl sm:text-2xl md:text-3xl text-[var(--text-primary)] font-medium"
         style={{ letterSpacing: '-0.01em' }}
       >
         {title}
@@ -123,7 +123,7 @@ export default function AnimatedHero({ name, title, description, logoSrc }: Prop
 
       <motion.p
         variants={itemVariants}
-        className="mt-8 max-w-3xl text-xl sm:text-2xl text-[var(--text-secondary)] leading-relaxed"
+        className="mt-6 sm:mt-8 max-w-3xl text-lg sm:text-xl md:text-2xl text-[var(--text-secondary)] leading-relaxed px-4 sm:px-0"
       >
         {description}
       </motion.p>

@@ -2,7 +2,16 @@ import { motion } from 'motion/react';
 import { useProjects } from '@/hooks/useProjects';
 import ProjectCard from './ProjectCard';
 
-export default function ProjectsSection() {
+interface ProjectsTranslations {
+  error: string;
+  empty: string;
+}
+
+interface Props {
+  translations: ProjectsTranslations;
+}
+
+export default function ProjectsSection({ translations: t }: Props) {
   const { projects, loading, error } = useProjects(true);
 
   if (loading) {
@@ -29,7 +38,7 @@ export default function ProjectsSection() {
   if (error) {
     return (
       <div className="text-center text-[var(--text-secondary)]">
-        Failed to load projects.
+        {t.error}
       </div>
     );
   }
@@ -37,7 +46,7 @@ export default function ProjectsSection() {
   if (projects.length === 0) {
     return (
       <div className="text-center text-[var(--text-secondary)]">
-        No projects available.
+        {t.empty}
       </div>
     );
   }

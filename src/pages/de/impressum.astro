@@ -1,0 +1,79 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Section from '@/components/astro/Section.astro';
+import Footer from '@/components/astro/Footer.astro';
+import AnimatedSection from '@/components/react/AnimatedSection';
+
+const lang = 'de';
+---
+
+<BaseLayout
+  title="Impressum | Andre Schmidt"
+  description="Impressum und rechtliche Informationen für vndre.dev"
+  lang={lang}
+>
+  <Section class="min-h-screen pt-20">
+    <AnimatedSection client:visible>
+      <div class="max-w-3xl mx-auto">
+        <h1 class="text-4xl sm:text-5xl font-bold tracking-tight mb-12" style="letter-spacing: -0.02em;">
+          Impressum
+        </h1>
+
+        <div class="prose prose-lg dark:prose-invert max-w-none space-y-8 text-[var(--text-secondary)]">
+          <section>
+            <h2 class="text-2xl font-semibold text-[var(--text-primary)] mb-4">Angaben gemäß § 5 TMG</h2>
+            <p>
+              Andre Schmidt<br />
+              Hinter der Kirche 10<br />
+              31036 Eime-Deinsen<br />
+              Deutschland
+            </p>
+          </section>
+
+          <section>
+            <h2 class="text-2xl font-semibold text-[var(--text-primary)] mb-4">Kontakt</h2>
+            <p>
+              E-Mail: <a href="mailto:hello@vndre.dev" class="text-[var(--color-accent)] hover:underline">hello@vndre.dev</a>
+            </p>
+          </section>
+
+          <section>
+            <h2 class="text-2xl font-semibold text-[var(--text-primary)] mb-4">Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV</h2>
+            <p>
+              Andre Schmidt<br />
+              Hinter der Kirche 10<br />
+              31036 Eime-Deinsen
+            </p>
+          </section>
+
+          <section>
+            <h2 class="text-2xl font-semibold text-[var(--text-primary)] mb-4">Haftungsausschluss</h2>
+
+            <h3 class="text-xl font-medium text-[var(--text-primary)] mt-6 mb-3">Haftung für Inhalte</h3>
+            <p>
+              Die Inhalte dieser Seiten wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte kann jedoch keine Gewähr übernommen werden. Als Diensteanbieter bin ich gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich.
+            </p>
+
+            <h3 class="text-xl font-medium text-[var(--text-primary)] mt-6 mb-3">Haftung für Links</h3>
+            <p>
+              Diese Website enthält Links zu externen Webseiten Dritter, auf deren Inhalte ich keinen Einfluss habe. Deshalb kann ich für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich.
+            </p>
+          </section>
+
+          <section>
+            <h2 class="text-2xl font-semibold text-[var(--text-primary)] mb-4">Urheberrecht</h2>
+            <p>
+              Die durch den Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers.
+            </p>
+          </section>
+        </div>
+
+        <div class="mt-12">
+          <a href="/de/" class="text-[var(--color-accent)] hover:underline">← Zurück zur Startseite</a>
+        </div>
+      </div>
+    </AnimatedSection>
+  </Section>
+
+  <Footer lang={lang} />
+</BaseLayout>

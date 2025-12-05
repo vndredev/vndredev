@@ -1,0 +1,124 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Section from '@/components/astro/Section.astro';
+import Footer from '@/components/astro/Footer.astro';
+import AnimatedSection from '@/components/react/AnimatedSection';
+
+const lang = 'en';
+---
+
+<BaseLayout
+  title="Privacy Policy | Andre Schmidt"
+  description="Privacy Policy for vndre.dev"
+  lang={lang}
+>
+  <Section class="min-h-screen pt-20">
+    <AnimatedSection client:visible>
+      <div class="max-w-3xl mx-auto">
+        <h1 class="text-4xl sm:text-5xl font-bold tracking-tight mb-12" style="letter-spacing: -0.02em;">
+          Privacy Policy
+        </h1>
+
+        <div class="prose prose-lg dark:prose-invert max-w-none space-y-8 text-[var(--text-secondary)]">
+          <section>
+            <h2 class="text-2xl font-semibold text-[var(--text-primary)] mb-4">1. Data Controller</h2>
+            <p>
+              The data controller responsible for this website is:
+            </p>
+            <p>
+              Andre Schmidt<br />
+              Email: <a href="mailto:hello@vndre.dev" class="text-[var(--color-accent)] hover:underline">hello@vndre.dev</a>
+            </p>
+          </section>
+
+          <section>
+            <h2 class="text-2xl font-semibold text-[var(--text-primary)] mb-4">2. Collection and Storage of Personal Data</h2>
+
+            <h3 class="text-xl font-medium text-[var(--text-primary)] mt-6 mb-3">Contact Form</h3>
+            <p>
+              When you use the contact form on this website, the following data is collected:
+            </p>
+            <ul class="list-disc list-inside space-y-2 mt-4">
+              <li>Name</li>
+              <li>Email address</li>
+              <li>Your message</li>
+              <li>Time of submission</li>
+            </ul>
+            <p class="mt-4">
+              <strong>Legal basis:</strong> Processing is based on Art. 6 (1) lit. b GDPR (contract initiation) or Art. 6 (1) lit. f GDPR (legitimate interest in responding to inquiries).
+            </p>
+            <p class="mt-4">
+              <strong>Storage period:</strong> Your data will be deleted once the inquiry has been conclusively processed, unless there are legal retention obligations.
+            </p>
+          </section>
+
+          <section>
+            <h2 class="text-2xl font-semibold text-[var(--text-primary)] mb-4">3. Hosting and Third-Party Data Processing</h2>
+
+            <h3 class="text-xl font-medium text-[var(--text-primary)] mt-6 mb-3">Firebase (Google Cloud)</h3>
+            <p>
+              This website is hosted on Firebase (Google Cloud Platform). Contact form data is stored in Firebase Firestore.
+            </p>
+            <p class="mt-4">
+              <strong>Provider:</strong> Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Ireland
+            </p>
+            <p class="mt-4">
+              Google also processes data in the USA. The transfer is based on EU Commission standard contractual clauses.
+            </p>
+            <p class="mt-4">
+              More information: <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener noreferrer" class="text-[var(--color-accent)] hover:underline">Firebase Privacy</a>
+            </p>
+          </section>
+
+          <section>
+            <h2 class="text-2xl font-semibold text-[var(--text-primary)] mb-4">4. Your Rights</h2>
+            <p>
+              Under the GDPR, you have the following rights:
+            </p>
+            <ul class="list-disc list-inside space-y-2 mt-4">
+              <li><strong>Right to access (Art. 15 GDPR):</strong> You can request information about your processed data.</li>
+              <li><strong>Right to rectification (Art. 16 GDPR):</strong> You can request correction of inaccurate data.</li>
+              <li><strong>Right to erasure (Art. 17 GDPR):</strong> You can request deletion of your data.</li>
+              <li><strong>Right to restriction (Art. 18 GDPR):</strong> You can request restriction of processing.</li>
+              <li><strong>Right to data portability (Art. 20 GDPR):</strong> You can receive your data in a common format.</li>
+              <li><strong>Right to object (Art. 21 GDPR):</strong> You can object to processing.</li>
+            </ul>
+            <p class="mt-4">
+              To exercise your rights, please contact: <a href="mailto:hello@vndre.dev" class="text-[var(--color-accent)] hover:underline">hello@vndre.dev</a>
+            </p>
+          </section>
+
+          <section>
+            <h2 class="text-2xl font-semibold text-[var(--text-primary)] mb-4">5. Right to Complain</h2>
+            <p>
+              You have the right to lodge a complaint with a data protection supervisory authority regarding the processing of your personal data.
+            </p>
+          </section>
+
+          <section>
+            <h2 class="text-2xl font-semibold text-[var(--text-primary)] mb-4">6. Cookies</h2>
+            <p>
+              This website only uses technically necessary cookies that are required for the operation of the website. No tracking or marketing cookies are used.
+            </p>
+          </section>
+
+          <section>
+            <h2 class="text-2xl font-semibold text-[var(--text-primary)] mb-4">7. Changes to this Privacy Policy</h2>
+            <p>
+              This privacy policy may be updated as needed. The current version can always be found on this page.
+            </p>
+            <p class="mt-4">
+              Last updated: December 2025
+            </p>
+          </section>
+        </div>
+
+        <div class="mt-12">
+          <a href="/en/" class="text-[var(--color-accent)] hover:underline">← Back to Home</a>
+        </div>
+      </div>
+    </AnimatedSection>
+  </Section>
+
+  <Footer lang={lang} />
+</BaseLayout>
